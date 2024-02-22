@@ -1,0 +1,27 @@
+From f59843c1b675976d8de0bd5d18bd8fe581e06530 Mon Sep 17 00:00:00 2001
+From: Yanfeng Liu <yfliu2008@qq.com>
+Date: Thu, 22 Feb 2024 12:22:51 +0800
+Subject: [PATCH] fix unused warnings like:
+
+Error: microADB/hal/hal_uv_client_usb.c:90:13: error: unused variable 'ret'
+
+Signed-off-by: Yanfeng Liu <yfliu2008@qq.com>
+---
+ hal/hal_uv_client_usb.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/hal/hal_uv_client_usb.c microADB/hal/hal_uv_client_usb.c
+index b1777b1..482fc89 100644
+--- a/hal/hal_uv_client_usb.c
++++ microADB/hal/hal_uv_client_usb.c
+@@ -95,6 +95,7 @@ static void usb_uv_kick(adb_client_t *c) {
+             usb_uv_on_data_available);
+         /* TODO check return code */
+         assert(ret == 0);
++        UNUSED(ret);
+     }
+ 
+     adb_client_kick_services(c);
+-- 
+2.34.1
+

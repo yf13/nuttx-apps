@@ -33,6 +33,7 @@ $(ADB_UNPACKDIR):
 	$(Q) unzip -o $(ADB_VERSION).zip
 	$(call DELFILE, $(ADB_VERSION).zip)
 	$(call MOVEFILE, $(ADB_UNPACKNAME)-$(ADB_VERSION), $(ADB_UNPACKDIR))
+	$(Q) patch -p0 < 0001-ci-unused-warnings.patch
 
 # adb server app
 
