@@ -53,7 +53,7 @@
 #  ifndef CONFIG_ARCH_BOARD
 #    define BOARD_NAME g_unknown
 #  else
-#    define BOARD_NAME CONFIG_ARCH_BOARD
+#    define BOARD_NAME CONFIG_BASE_DEFCONFIG
 #  endif
 #endif
 
